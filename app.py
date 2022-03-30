@@ -24,12 +24,6 @@ def predict():
     op_df = pd.DataFrame.from_records([outputs])
     answer = str(op_df['answer'].iloc[0])
     return render_template('index.html', prediction_text='Predicted answer for "'+question+'" :  {}'.format(answer))
-    # try:
-    #     fahrenheit = float(question) * 9 / 5 + 32
-    #     fahrenheit = round(fahrenheit, 3)  # Round to three decimal places
-    #     return str(fahrenheit)
-    # except ValueError:
-    #     return "invalid input"
-
+    
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8282, debug=True)
